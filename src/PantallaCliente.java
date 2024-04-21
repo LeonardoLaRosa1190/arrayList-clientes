@@ -9,7 +9,7 @@ public class PantallaCliente  {
         do {
             System.out.println("Menú:");
             System.out.println("1. Agregar Cliente");
-            System.out.println("2. Consultar Cliente");
+            System.out.println("2. Consultar lista de Clientes");
             System.out.println("3. Borrar Cliente");
             System.out.println("4. Salir");
             System.out.print("Ingresa una opción: ");
@@ -19,13 +19,13 @@ public class PantallaCliente  {
 
             switch (accion) {
                 case 1:
-                    c.agregaCliente();
+                    c.agregaClientes();
                     break;
                 case 2:
-                    c.consultarCliente();
+                    c.mostrarClientes();
                     break;
                 case 3:
-                    c.borrarCliente();
+                    c.borrarClientes();
                     break;
                 case 4:
                     System.out.println("Saliendo del programa.");

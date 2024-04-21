@@ -3,6 +3,19 @@ import java.util.Scanner;
 
 public class Cliente {
 
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     private String nombre;
     private String apellido;
     private String email;
@@ -14,7 +27,7 @@ public class Cliente {
         this.apellido = apellido;
         this.email = email;
     }
-    public void agregaCliente(){
+    public void agregaClientes(){
         System.out.println("Ingrese el Nombre del Cliente:");
         this.nombre = entradaArgumento.nextLine();
         System.out.println("Ingrese el Apellido del Cliente:");
@@ -24,18 +37,14 @@ public class Cliente {
         arregloCliente.add(new Cliente (nombre,apellido,email));
         System.out.println("Cliente ingresado con éxito!!");
     }
-    public void consultarCliente(){
-        System.out.println("Ingrese el Apellido del cliente que desea buscar");
-        for (Cliente c: arregloCliente){
-            if {
-                System.out.println("El nombre ingresado está en el sistema");
-            }else {
-                System.out.println("El nombre ingresado no está en el sistema");
-            }
+    public void mostrarClientes(){;
+        for(Cliente c : arregloCliente) {
+            System.out.println("El Nombre del Cliente es: " + c.getNombre() + "\n"
+                    + "El Apellido del Cliente es: " + c.getApellido() + "\n"
+                    + "El email del Cliente es: " + c.getEmail());
         }
-
     }
-    public void borrarCliente(){
+    public void borrarClientes(){
         System.out.println("Ingrese el Nombre del cliente que desea buscar");
         this.nombre = entradaArgumento.nextLine();
         System.out.println("Ingrese el Apellido");
