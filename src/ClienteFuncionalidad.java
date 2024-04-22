@@ -36,14 +36,19 @@ public class ClienteFuncionalidad  extends Cliente{
                 eliminarCliente();
                 break;
             case 2:
-                mostrarClientes();
+                mostrarClientes2();
                 eliminarCliente();
                 break;
             default:
                 System.out.println("Elección inválida. Por favor, selecciona una opción válida.");
         }
     }
-        private void eliminarCliente() {
+    public void mostrarClientes2(){;
+        for(Cliente c : arregloCliente) {
+            System.out.println("ID: "+ c.getIdCliente() +" "+ c.getNombre() +" "+ c.getApellido());
+        }
+    }
+    private void eliminarCliente() {
             System.out.println("Ingrese el id del cliente que desea eliminar");
             int id = EntradaArgumento.nextInt();
             for (Cliente c : arregloCliente) {
@@ -51,7 +56,7 @@ public class ClienteFuncionalidad  extends Cliente{
                     System.out.println("¿Está seguro de que desea eliminar al cliente " + c.getNombre() + " " + c.getApellido() + "? (S/N)");
                     String confirmacion = EntradaArgumento.next().toLowerCase();
                     if (confirmacion.equals("s")) {
-                        arregloCliente.remove(c);
+                        arregloCliente.remove(id-1);
                         System.out.println("Cliente eliminado con éxito.");
                     } else {
                         System.out.println("Operación cancelada.");
@@ -60,5 +65,5 @@ public class ClienteFuncionalidad  extends Cliente{
                     System.out.println("El ID del cliente ingresado no se encuentra.");
                 }
             }
-        }
+    }
 }

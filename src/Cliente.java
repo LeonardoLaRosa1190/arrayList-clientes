@@ -13,15 +13,12 @@ public class Cliente {
     public String getEmail() {
         return email;
     }
-
-    private String nombre;
-    private String apellido;
-    private String email;
-
     public int getIdCliente() {
         return idCliente;
     }
-
+    private String nombre;
+    private String apellido;
+    private String email;
     private int idCliente;
     private static int id = 1;
     ArrayList<Cliente> arregloCliente = new ArrayList<>();
@@ -33,8 +30,6 @@ public class Cliente {
         this.email = email;
         this.idCliente = generarId();
     }
-
-
     private int generarId() {
         int idGenerado = id;
         id++;
