@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class PantallaCliente  {
-    Cliente c = new Cliente();
+    ClienteFuncionalidad c = new ClienteFuncionalidad();
     Scanner entradaTeclado = new Scanner(System.in);
     public void buclePrincipal(){
 
