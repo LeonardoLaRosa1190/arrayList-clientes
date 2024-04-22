@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ClienteFuncionalidad  extends Cliente{
-
+    private int id;
     ClienteFuncionalidad(){}
     Scanner EntradaArgumento = new Scanner(System.in);
     public void agregaClientes(){
@@ -50,17 +50,19 @@ public class ClienteFuncionalidad  extends Cliente{
     }
     private void eliminarCliente() {
             System.out.println("Ingrese el id del cliente que desea eliminar");
-            int id = EntradaArgumento.nextInt();
+            id = EntradaArgumento.nextInt();
             for (Cliente c : arregloCliente) {
                 if (c.getIdCliente() == id) {
                     System.out.println("¿Está seguro de que desea eliminar al cliente " + c.getNombre() + " " + c.getApellido() + "? (S/N)");
                     String confirmacion = EntradaArgumento.next().toLowerCase();
                     if (confirmacion.equals("s")) {
-                        arregloCliente.remove(id-1);
+                        arregloCliente.remove(c);
                         System.out.println("Cliente eliminado con éxito.");
+                        break;
                     } else {
                         System.out.println("Operación cancelada.");
                     }
+
                 }else{
                     System.out.println("El ID del cliente ingresado no se encuentra.");
                 }
