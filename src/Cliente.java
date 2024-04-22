@@ -17,6 +17,13 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private String email;
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    private int idCliente;
+    private static int id = 1;
     ArrayList<Cliente> arregloCliente = new ArrayList<>();
 
     Cliente (){};
@@ -24,6 +31,14 @@ public class Cliente {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
+        this.idCliente = generarId();
+    }
+
+
+    private int generarId() {
+        int idGenerado = id;
+        id++;
+        return idGenerado;
     }
 
 
