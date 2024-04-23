@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
 public class PantallaCliente  {
-    ClienteFuncionalidad c = new ClienteFuncionalidad();
-    Scanner entradaTeclado = new Scanner(System.in);
-    public void buclePrincipal(){
-
+    public static void buclePrincipal(){
+        ClienteFuncionalidad c = new ClienteFuncionalidad();
+        Scanner entradaTeclado = new Scanner(System.in);
         int accion;
         do {
             System.out.println("Menú:");
