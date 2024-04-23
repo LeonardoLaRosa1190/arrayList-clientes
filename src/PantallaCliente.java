@@ -30,7 +30,7 @@ public class PantallaCliente  {
                     System.out.println("Saliendo del programa.");
                     break;
                 default:
-                    System.out.println("Elección inválida. Por favor, selecciona una opción válida.");
+                    System.out.println("Elección inválida. Por favor, elegí una opción válida.");
             }
         } while (accion != 4);
     }
