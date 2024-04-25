@@ -51,7 +51,7 @@ public class ClienteFuncionalidad  extends Cliente{
     }
     public void mostrarCuentas(){
         for(Cliente c : arregloCliente) {
-            System.out.println("Cliente: " + c.getNombre() +" "+ c.getApellido()+" Nro cuenta: "+ c.getNroCuenta());
+            System.out.println(c.getNombre() +" "+ c.getApellido()+" Nro cuenta: "+ c.getNroCuenta());
         }
     }
 
@@ -76,9 +76,9 @@ public class ClienteFuncionalidad  extends Cliente{
             }
     }
    public void modificarCuenta(){
-       System.out.println("Lista de clientes:");
+       System.out.println("\nLista de clientes:");
         mostrarCuentas();
-        System.out.println("Ingrese el nro de la Cuenta que desea modificar");
+        System.out.println("\nIngrese el nro de la Cuenta que desea modificar");
         id = EntradaArgumento.nextInt();
         for (Cliente c : arregloCliente) {
             if(c.getNroCuenta() == id){
