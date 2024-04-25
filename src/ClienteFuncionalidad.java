@@ -21,7 +21,8 @@ public class ClienteFuncionalidad  extends Cliente{
             System.out.println("El ID del cliente es: "+ c.getIdCliente() + "\n"
                     + "El Nombre del Cliente es: " + c.getNombre() + "\n"
                     + "El Apellido del Cliente es: " + c.getApellido() + "\n"
-                    + "El email del Cliente es: " + c.getEmail());
+                    + "El email del Cliente es: " + c.getEmail()
+                    + "\n" + c.getCuenta() + "\n");
         }
         System.out.println("Presione enter para continuar");
         EntradaArgumento.nextLine();
@@ -43,11 +44,17 @@ public class ClienteFuncionalidad  extends Cliente{
                 System.out.println("Elección inválida. Por favor, selecciona una opción válida.");
         }
     }
-    public void mostrarClientes2(){;
+    public void mostrarClientes2(){
         for(Cliente c : arregloCliente) {
-            System.out.println("ID: "+ c.getIdCliente() +" "+ c.getNombre() +" "+ c.getApellido());
+            System.out.println("ID: "+ c.getIdCliente() +" "+ c.getNombre() +" "+ c.getApellido()+" "+ c.getCuenta());
         }
     }
+    public void mostrarCuentas(){
+        for(Cliente c : arregloCliente) {
+            System.out.println("Cliente: " + c.getNombre() +" "+ c.getApellido()+" Nro cuenta: "+ c.getNroCuenta());
+        }
+    }
+
     private void eliminarCliente() {
             System.out.println("Ingrese el id del cliente que desea eliminar");
             id = EntradaArgumento.nextInt();
@@ -67,5 +74,25 @@ public class ClienteFuncionalidad  extends Cliente{
                     System.out.println("El ID del cliente ingresado no se encuentra.");
                 }
             }
+    }
+   public void modificarCuenta(){
+       System.out.println("Lista de clientes:");
+        mostrarCuentas();
+        System.out.println("Ingrese el nro de la Cuenta que desea modificar");
+        id = EntradaArgumento.nextInt();
+        for (Cliente c : arregloCliente) {
+            if(c.getNroCuenta() == id){
+                System.out.println("Ingrese el monto de la cuenta");
+                int monto = EntradaArgumento.nextInt();
+                EntradaArgumento.nextLine();
+                System.out.println("Ingrese el descripcion de la cuenta");
+                String descripcion = EntradaArgumento.nextLine();
+                System.out.println("Cuenta modificada con exito!!");
+                c.setDatosCuenta(monto,descripcion);
+            }else{
+                System.out.println("El numero de cuenta ingresado es incorrecto");
+            }
+        }
+
     }
 }
